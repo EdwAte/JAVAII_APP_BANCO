@@ -30,7 +30,7 @@ public class TranferenciaServices {
             throw new Exception("Las cuentas deben ser númericas");
         }
         if (cuentaOrigen.getSaldo().compareTo(transferencia.getMonto()) < 0) {
-            throw new Exception("Saldo insuficiente en la cuenta para realizar la transferencia, el saldo actual es: " + cuentaEnvia.getSaldo());
+            throw new Exception("Saldo insuficiente en la cuenta para realizar la transferencia, el saldo actual es: " + cuentaOrigen.getSaldo());
         }
         return transferenciaRepository.save(transferencia);
     }
